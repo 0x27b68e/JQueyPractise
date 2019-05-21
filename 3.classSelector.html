@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title></title>
+    <script src="jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+    //http://csharp-video-tutorials.blogspot.com/2015/03/jquery-class-selector.html
+        $(document).ready(function () {
+            /*$('.small').css('color', 'blue').fadeOut(3000).fadeIn(2000);
+            $('.big').css('color', 'green');*/
+            //$('div.small, p.big').fadeOut(3000).fadeIn(2000); //select class small and class big
+
+            $('#div2 .small1').fadeOut(2000).fadeIn(2000);
+
+            //$('.small2.big2').css('border', '5px red solid'); //if have space then big2 in nested of small2
+            $('.small2').filter('.big2').css('border', '5px red solid');
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <span class="small">Span 1</span><br />
+    <div class="small">Div 1</div><br />
+    <span class="big">Span 2</span>
+    <p class="big">This is a paragraph</p>
+
+    <div id="div1" class="small1">DIV 1</div><br />
+        <div id="div2">Div 2<br />
+            <div class="small1">DIV 3</div><br />
+            <span class="small1">SPAN</span>
+        </div><br />
+
+    <div class="small2 big2">DIV 1</div>
+    <div class="small2">DIV 2</div>
+</body>
+</html>

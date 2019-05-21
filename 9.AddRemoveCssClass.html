@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title></title>
+    <style>
+        .divContainer {
+            color: blue;
+            background-color:brown; 
+        }
+        .color { color: red}
+        .italics { font-style: italic}
+        .bold {font-weight: bold}
+        .textBox{ background-color: royalblue}
+    </style>
+    <script src="jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+    //How to check if class exist or not in element
+    //How to add or remove css class 
+    //How to toggle css class 
+        $(document).ready(function () {
+          $('#bt1').click(function(){
+              $(this).addClass('color');
+          });
+
+          $('#bt2').addClass('color').click(function(){
+              $(this).removeClass('color');
+          });
+
+          $('#bt3').click(function(){
+              $(this).addClass('color italics');
+          });
+
+          $('#bt4').addClass('color italics').click(function(){
+              $(this).removeClass('color italics');
+          });
+
+          $('#bt5').click(function(){
+              $(this).addClass('color italics bold');
+          });
+
+          $('#bt6').addClass('color italics bold').click(function(){
+              $(this).removeClass('color italics bold');
+          });
+
+          //
+          $('#bt7').click(function(){
+              $(this).toggleClass('color');
+          })
+          //
+          $('input').each(function(){
+              $(this).focus(function(){
+                  $(this).addClass('textBox');
+              })
+              $(this).blur(function(){
+                  $(this).removeClass('textBox');
+              })
+          })
+        });
+    </script>
+
+</head>
+<body style="font-family:Arial">
+        <button id="bt1">add color class</button><button id="bt2">remove color class</button><br />
+        <button id="bt3">add color and Italics class</button><button id="bt4">remove color and Italics class</button><br />
+        <button id="bt5">add color, Italics and Bold class</button><button id="bt6">remove all class</button><br />
+
+        <tr>
+            <td><input id="bt7" type="button" value="Toggle"/></td>
+
+        </tr>
+        <br />
+
+        <label>First Name: </label><input id='firstname' type="text" /><br/>
+        <label>Last Name: </label><input id='lastname' type="text" /><br />
+        <label>Gender</label>
+        <select>
+            <option value="male">Male</option>
+            <option value="famale">FaMale</option>
+        </select><br />
+        <label>Email: </label><input id='email' type="text" /><br/>
+</body>
+</html>

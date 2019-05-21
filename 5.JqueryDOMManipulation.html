@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title></title>
+    <script src="jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //select the first match element
+            /*let title = $('div').attr('title');
+            alert(title);*/
+
+            //If we want to set attribute value, then specify two parameter
+            //$('div').attr('title', 'New Title');
+
+            //If We want to set attribute value, and diffent value for each element then
+            /*$('div').each(function(index, element) {
+                $(this).attr('title', 'Title' + (index+1));
+            })*/
+
+            //loop all element and get attribute 
+           /* $('div').each(function(index, element) {
+                //If we want to get attribute value, then specify one parameter
+                let title = $(this).attr('title');
+                alert(title); 
+            })*/
+
+
+            // manipulation with JSON Object
+            /*$('div').attr({
+                'title' : 'New Title Config',
+                'style' : 'border: 3px solid red',
+                'name' : 'New Name'
+            });*/
+
+            //We can use method chainning to create 
+            $('div').attr('title', 'New Title Config')
+                    .attr('style', 'border: 3px solid red')
+                    .attr('name', 'New Name');
+
+            //example using attr() method of Jquery (return JQuery object)
+            let result = '';
+            /*$('div').each(function() {
+               result += 'title: ' + $(this).attr('title') + '<br />';
+                result += 'style ' + $(this).attr('style') + '<br />';
+                result +=  'name ' + $(this).attr('name') + '<br /><br />';
+            });*/
+            
+            //using  text() method of JQuery(return string)
+            /*$('div').each(function() {
+               result += 'text: ' + $(this).text() + '<br />';
+            });*/
+
+            //example using clink method of JQuery
+            /*$('div').each(function() {
+               result += 'text: ' + $(this).click(function() {
+                   alert('you just clink');
+                }) + '<br />';
+            }); */ 
+
+            // using css method, return JQuery object
+            $('div').each(function() {
+               result += 'text: ' + $(this).text() + '<br />';
+            });
+
+            $('#result').html(result);
+
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <div title="Bitcoin">Bitcoin</div>
+    <div title="Eth">Ethereum</div>
+    <div title="Ltc">Litecoin</div>
+    <div title="Neo">Neo</div>
+
+    <p id='result'></p>
+</body>
+</html>

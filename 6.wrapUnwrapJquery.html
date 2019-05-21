@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title></title>
+    <style>
+        .divContainer {
+            color: blue;
+            background-color:brown; 
+        }
+    </style>
+    <script src="jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+    //http://csharp-video-tutorials.blogspot.com/2015/04/jquery-wrap-elements.html
+        $(document).ready(function () {
+          //  $('div').wrap('<div class = "divContainer" />');
+          //$('div').unwrap(); // remove parent of div element
+          //$('div').wrapAll('<div class = "divContainer" />') // wrap all div element
+          $('div').wrapInner('<div class = "divContainer" />');
+         // $('div').unwrap(); // remove parent
+        });
+    </script>
+
+</head>
+<body style="font-family:Arial">
+        <div id="div1">
+                DIV 1
+            </div>
+            <div id="div2">
+                DIV 2
+            </div>
+            <div id="div3">
+                DIV 3
+            </div>
+</body>
+</html>

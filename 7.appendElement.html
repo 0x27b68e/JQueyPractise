@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title></title>
+    <style>
+        .divContainer {
+            color: blue;
+            background-color:brown; 
+        }
+    </style>
+    <script src="jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+    //http://csharp-video-tutorials.blogspot.com/2015/04/jquery-wrap-elements.html
+        $(document).ready(function () {
+            //insert at the end selected element
+          //$('div').append('<b style = "color: blue"> Learning </b>')
+
+           //insert at the fist selected element
+           //$('div').prepend('<b style = "color:blue">Happy</b>');
+           $('div').append($('#pro')).css('color', 'green');
+        });
+    </script>
+
+</head>
+<body style="font-family:Arial">
+        <span id="pro"> Programming</span>
+       <div id="divjquery">Jquery</div>
+       <div id="divreact">React</div>
+
+       <div id="divpython">Python</div>
+       <div id="divnodejs">Nodejs</div>
+</body>
+</html>

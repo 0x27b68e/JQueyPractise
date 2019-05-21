@@ -1,0 +1,94 @@
+<html>
+<head>
+    <title></title>
+    <script src="jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //http://csharp-video-tutorials.blogspot.com/2015/04/jquery-each-function.html
+            /*$('li').each(function (index, element) {
+                //let tem = $(element).text();
+                let tem2 = $(this).text();
+                alert(`index: ${index} and value: ${tem2}`);
+            }).css('color', 'red');*/
+
+            /*$('li').each(function () { // omit index, element parameter
+                let tem = $(this).text();
+                alert(`value: ${tem}`);
+            }).css('color', 'red');*/
+
+            /*$('li').each(function () {
+                let tem = $(this).text();
+                if(tem == 'UK') {
+                    return false;
+                } else {
+                    alert(`value: ${tem}`);
+                }
+           // }).css('background', 'green').toggle(2000).show(1000).hide(1000).resize(); // test jQuery function: css, toggle, show, hide
+              }).css('background', 'green').mouseover(function () { // test mouseover function
+                  $(this).css('color', 'red');
+              });*/
+
+             /* $('li').each(function () {
+                let tem = $(this).text();
+                    alert(`value: ${tem}`);
+              }).css('background', 'green').mouseleave(function () { // mouseleave function
+                      $(this).css('color', 'blue');
+              })*/
+
+              /* $('li').each(function () {
+                let tem = $(this).text();
+                    alert(`value: ${tem}`);
+              }).css('background', 'green').mousemove(function () { // mousemove function
+                      $(this).toggle(3000);
+              })*/
+
+             /* $('li').each(function () {
+                let tem = $(this).text();
+                    alert(`value: ${tem}`);
+              }).css('background', 'green').mouseenter(function () {
+                      $(this).toggle(3000);
+              })*/
+
+              /*$('li').each(function () {
+                let tem = $(this).text();
+                    alert(`value: ${tem}`);
+              }).css('background', 'green').mouseout(function () { // mouseout function
+                      $(this).toggle(3000);
+              })*/
+
+              /*$('li').each(function () {
+                let tem = $(this).text();
+                    alert(`value: ${tem}`);
+              }).css('background', 'green').mouseup(function () { // mouseup function
+                      $(this).css('color', 'blue');
+              })*/
+
+              /*$('li').each(function () {
+                let tem = $(this).text();
+                    alert(`value: ${tem}`);
+              }).css('background', 'green');*/
+
+             /* $('li').each(function () {  // mỗi vòng loop sẽ đi tìm id = divResult
+                $('#divResult').html($('#divResult').html() + '<br/>' + $(this).text())
+              });*/
+
+              let result = '';
+              $('li').each(function () {
+                result+= $(this).text() + '</br>';
+              });
+              $('#divResult').html(result);
+
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <ul>
+        <li>US</li>
+        <li>India</li>
+        <li>UK</li>
+        <li>Canada</li>
+        <li>Australia</li>
+    </ul>
+    <div id="divResult"></div>
+</body>
+</html>

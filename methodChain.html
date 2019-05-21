@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title></title>
+    <script src="jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('li')
+            .css('color', 'blue')
+            .slideUp(3000)
+            .slideDown(3000)
+            .attr('title', 'MyTitle');
+
+            /*$('li')
+            .text() //don't work because text() return string, not jquery Object
+            .css('color', 'blue')
+            .slideUp(3000)
+            .slideDown(3000)
+            .attr('title', 'MyTitle');*/
+
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <ul>
+        <li>US</li>
+        <li>India</li>
+        <li>UK</li>
+        <li>Canada</li>
+        <li>Australia</li>
+    </ul>
+    <div id="divResult"></div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title></title>
+    <style>
+        .divContainer {
+            color: blue;
+            background-color:brown; 
+        }
+    </style>
+    <script src="jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+    //What is different, $.each() or JQuery.each() will iterate over the Array or Javascript Object
+    // .each() or $('div').each() will iterate over JQuery collection. one play with Javascipt, one play with jquery.
+        $(document).ready(function () {
+            $('li').each((index, data) =>{
+                //alert('index:' + index + ' data: ' + data.innerHTML);//data is raw Dom element, not Jquery object
+                //convert raw dom element to Jquery object, using jquery wrapper
+                alert('index:' + index + ' data: ' + $(data).text();
+            })
+
+            let objectPerson = {
+                'name': 'Nguyen Viet Quan',
+                'age': 34,
+                'salaray': 100000,
+            };
+            $.each(objectPerson, (key, value) => {
+                alert('key: ' + key + ', value: ' + value);
+            })
+
+            let objectArray = [{
+                title: 'learn Javascript',
+                isDone: false,
+            }, {
+                title: 'learn Jquery',
+                isDone: true,
+            }];
+            //.each
+            $.each(objectArray, (index, data) =>{
+                alert('index: ' + index + ', title: ' + data.title + ', isDone: ' + data.isDone);
+            })
+
+
+        });
+    </script>
+
+</head>
+<body style="font-family:Arial">
+        <ul>
+            <li>JQuery</li>
+            <li>React</li>
+            <li>Python</li>
+        </ul>
+</body>
+</html>

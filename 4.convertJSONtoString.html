@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title></title>
+    <script src="jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            let employeeObjectArray = [
+                {
+                "firstName": "Quan",
+                "lastName": "Nguyen",
+                "age": 34,
+                "Gender": "Male",
+                "Salary": 5000
+                 },
+                 {
+                "firstName": "Tra",
+                "lastName": "Lu",
+                "age": 33,
+                "Gender": "Famale",
+                "Salary": 10000
+                 }];
+                let resultString =  JSON.stringify(employeeObjectArray);
+                $('#divResult').html(resultString);
+
+
+                 //this is convert string to JSON
+                let stringToConvert = '[{"firstName":"Quan","lastName":"Nguyen","age":34,"Gender":"Male","Salary":5000},\
+                                       {"firstName":"Tra","lastName":"Lu","age":33,"Gender":"Famale","Salary":10000}]';
+                let resultJSON = JSON.parse(stringToConvert);
+                
+                let result = '';
+                //arrowFunction
+                $.each(resultJSON, (index, employee) => {
+                    result += 'firstName: ' + employee.firstName + '<br />';
+                    result += 'lastName: ' + employee.lastName + '<br />';
+                    result += 'age: ' + employee.age + '<br />';
+                    result += 'Gender: ' + employee.Gender + '<br />';
+                    result += 'Salary: ' + employee.Salary + '<br /> <br />';
+                })
+
+                $('#divJsonResult').html(result);
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <h3>String: </h3>
+    <div id="divResult"></div><br />
+    <h3>Json: </h3>
+    <div id="divJsonResult"></div>
+</body>
+</html>

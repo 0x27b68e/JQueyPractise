@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title></title>
+    <script src="jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*let employeeObject = {
+                "firstName": "Quan",
+                "lastName": "Nguyen",
+                "age": 34,
+                "Gender": "Male",
+                "Salary": 5000
+            }
+
+            let result = 'firstName: ' + employeeObject.firstName + ', lastName: ' + employeeObject.lastName + ', age: ' + employeeObject.age + 
+            ', Gender: ' + employeeObject.Gender + ', Salary: ' + employeeObject.Salary;
+
+
+            $('#divResult').html(result);*/
+
+            //json Array
+            let employeeObjectArray = [
+                {
+                "firstName": "Quan",
+                "lastName": "Nguyen",
+                "age": 34,
+                "Gender": "Male",
+                "Salary": 5000
+                 },
+                 {
+                "firstName": "Tra",
+                "lastName": "Lu",
+                "age": 33,
+                "Gender": "Famale",
+                "Salary": 10000
+                 }];
+                let resultEmployeeArray = '';
+                employeeObjectArray.forEach(function (employee) {
+                    resultEmployeeArray = 'firstName: ' + employee.firstName + ', lastName: ' + employee.lastName + ', age: ' + employee.age + 
+                                          ', Gender: ' + employee.Gender + ', Salary: ' + employee.Salary + "</br>";
+                })
+                alert(employeeObjectArray.length);
+
+        });
+    </script>
+</head>
+<body style="font-family:Arial">
+    <ul>
+        <li>US</li>
+        <li>India</li>
+        <li>UK</li>
+        <li>Canada</li>
+        <li>Australia</li>
+    </ul>
+    <div id="divResult"></div>
+    <div id="divEmployeeArray"></div>
+</body>
+</html>

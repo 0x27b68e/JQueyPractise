@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title></title>
+    <script src="jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+           //how to retrieve event data using event object
+           // how to convert javascript event object to JQuery event object
+          /* $('#btn').click(function(event) { //event click of JQuery object, event contains X, Y,... this object works  all broswer, cool 
+                alert('event type: ' + event.type)
+                alert('X: ' + event.pageX)
+                alert('Y: ' + event.pageY)
+                alert('Target: ' + event.target.type)
+                alert('Tagname: ' + event.target.tagName)
+
+           }) */
+
+          /* $('#btn').click(function() {
+               geteventDetails(event) // this event belong to javascript, so it will not work on IE8, IE7...
+           })
+
+           function geteventDetails(event) {
+                alert('event type: ' + event.type)
+                alert('X: ' + event.pageX)
+                alert('Y: ' + event.pageY)
+                alert('Target: ' + event.target.type)
+                alert('Tagname: ' + event.target.tagName)
+           } */
+// convert event javascript object to jquery event object
+           $('#btn').click(function() {
+               geteventDetails(event) // this event belong to javascript, so it will not work on IE8, IE7...
+           })
+
+           function geteventDetails(event) {
+               let jvent  = $.event.fix(event)
+
+                alert('event type: ' + jvent.type)
+                alert('X: ' + jvent.pageX)
+                alert('Y: ' + jvent.pageY)
+                alert('Target: ' + jvent.target.type)
+                alert('Tagname: ' + jvent.target.tagName)
+           } 
+        });
+    </script>
+
+</head>
+<body style="font-family:Arial">
+         <input id="btn" type="button" value="click me"> <br />
+         <div id="divResult"></div>
+</body>
+</html>

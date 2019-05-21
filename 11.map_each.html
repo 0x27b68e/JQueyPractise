@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title></title>
+    <style>
+        .divContainer {
+            color: blue;
+            background-color:brown; 
+        }
+    </style>
+    <script src="jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+    //http://csharp-video-tutorials.blogspot.com/2015/04/jquery-map-method.html
+    // map: map is used as iterator, each: is immutable iterator
+    //map: return new array,  each: return the original array
+    //map: order of callback arguments - element, index   ; each: order of callback arguments - index, element
+
+
+        $(document).ready(function () {
+            //each version
+            let each = $('li').each((index, data) =>{
+                //result.push($(data).text())
+                alert($(data).text())
+            }); 
+            alert(each.get()) //each is immutalble, so each is not to converted
+
+
+            let a = $('li').map((index, data) =>{
+                return $(data).text();
+            })
+            alert(a.get()) // map() is mutalbe, so get() to convert object to array
+
+
+            let arr = [2, 3, 4, 5, 6]
+
+            let result = $.each(arr, (index, element) => {
+                if(element == 4) {
+                    return false
+                }
+                alert(element)
+            })//return original array
+
+            $('#each').html(' ' + result)
+
+            let result2 = $.map(arr, (element, index) => {
+                if(element == 4){
+                    return false
+                }
+                alert(element)
+            })
+            $('#map').html(' ' + result2)
+        });
+    </script>
+
+</head>
+<body style="font-family:Arial">
+       <ul>
+            <li>Python</li>
+            <li>React</li>
+       </ul>
+       <div id='each'></div>
+       <div id='map'></div>
+</body>
+</html>

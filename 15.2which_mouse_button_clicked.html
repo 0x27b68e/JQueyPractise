@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title></title>
+    <script src="jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+       $(document).ready(function() { 
+         $('#button').mouseup(function(event) { // this event belong to jquery
+             let whichMouse='';
+                switch(event.which) {
+                    case 1: whichMouse="Left"; break;
+                    case 2: whichMouse="middle"; break;
+                    case 3: whichMouse="right"; break;
+                    default: whichMouse = "Invalid mouse"; break;
+                }
+            $('#divResult').html(whichMouse); // JQuery is different Javascript so much
+            //document.querySelector('#divResult').innerHTML = whichMouse; this for Javascript
+         })
+       })
+    </script>
+
+</head>
+<body style="font-family:Arial">
+         <button id="button">click me</button>
+         <div id="divResult"></div>
+</body>
+</html>

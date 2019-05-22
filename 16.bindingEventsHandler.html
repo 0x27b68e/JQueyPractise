@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title></title>
+    <script src="jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+    //https://www.youtube.com/watch?v=YLBGlZzAz4g&list=PL6n9fhu94yhVDV697uvHpavA3K_eWGQap&index=33
+       $(document).ready(function() {
+        
+        /* $('#button').click(function() {
+            $('#divResult').html('Button click');
+         }) */
+         // or you can use bind method
+         /*$('#button').bind('click', function() { // 'click', 'mouseup', 'mousedown', ''....
+             $('#divResult').html('Button Click');
+         })*/
+
+         // Binds multiple event handlers to button - button, If required, the event object can also 
+         // be passed to the event handlers.
+         $('#button').bind('click mouseover mouseout', function(event) {
+             if(event.type == 'click') {
+                 $('#divResult').html('Click button')
+             } else if (event.type == 'mouseover'){
+                 $(this).css('color', 'blue')
+             }
+         }) 
+       })
+    </script>
+
+</head>
+<body style="font-family:Arial">
+         <button id="button">click me</button>
+         <div id="divResult"></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+<html>
+<head>
+    <title></title>
+    <script src="jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+    //https://www.youtube.com/watch?v=YLBGlZzAz4g&list=PL6n9fhu94yhVDV697uvHpavA3K_eWGQap&index=33
+       $(document).ready(function() {
+         // if JQuery higher 1.7 then replace bind() by on(), and unbind() by of(). done
+         //http://csharp-video-tutorials.blogspot.com/2015/04/binding-event-handlers-using-jquery-on.html
+         $('#button').on('click', {
+             name: 'Nguyen Viet Quan',
+             age: 34
+         }, sayHello)
+
+         $('#button').on('click', sayHello) // no passing data 
+
+         function sayHello(event) {
+             if(event.data != null) {
+                 window.alert('Hello ' + event.data.name + ' ' + event.data.age)
+             } else {
+                 window.alert('No name provided ..')
+             }
+        }
+       })
+    </script>
+
+</head>
+<body style="font-family:Arial">
+         <button id="button">click me</button>
+</body>
+</html>
